@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculatorContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    background-color: beige;
+    max-width: 450px;
+}
+
+.numberButtons {
+    display: flex;
+    max-width: 450px;
+    padding: 5px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.numberButtons button {
+    flex-basis: calc(100% / 4);
+}
