@@ -88,10 +88,18 @@ buttons.forEach(button => {
                 awaitingNewCalculation = true;
             }
         } else if (isOperator) {
-            // Handles intermediate calculation when an operator is pressed
-            if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
+            // Check if a calculation has just been completed
+            if (awaitingNewCalculation) {
+                // If so, the firstNumber is already the result of the last calculation.
+                // We just need to set the new operator.
+                operator = value;
+                // Reset the flag for the next operation
+                awaitingNewCalculation = false;
+                // Update the display to show the result and the new operator
+                display.textContent = `${firstNumber} ${operator}`;
+            } else if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
+                // This block handles intermediate calculations (e.g., 5 + 6 + 7)
                 result = operate(operator, firstNumber, secondNumber);
-                // Handle division by zero
                 if (result === "Can't divide by 0!") {
                     display.textContent = result;
                     firstNumber = '';
@@ -99,13 +107,16 @@ buttons.forEach(button => {
                     secondNumber = '';
                     return;
                 }
-                // Update firstNumber with the result of previous calculation
                 firstNumber = result;
                 secondNumber = '';
+                operator = value; // Set the new operator
+                display.textContent = `${firstNumber} ${operator}`;
+            } else {
+                // This is the first operator after the first number is entered
+                operator = value;
+                display.textContent = `${firstNumber} ${operator}`;
             }
-            // Set the new operator and update the display
-            operator = value;
-            display.textContent = `${firstNumber} ${operator}`;
+
         } else { // It's a number or a decimal point
             if (awaitingNewCalculation) {
                 firstNumber = '';
