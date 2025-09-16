@@ -53,7 +53,6 @@ body {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-start;
-    /* Updated */
     flex-basis: calc(77.5% - 10px);
 }
 
@@ -61,7 +60,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* Updated */
     flex-basis: calc(22.5% - 10px);
 }
 
