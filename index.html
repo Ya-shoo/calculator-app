@@ -5,32 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator.Me</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div id="container">
         <div id="calculatorContainer">
-            <div class="display"> 1 + 1 = 2</div>
-            <div class="numberButtons">
-                <button class="btn">7</button>
-                <button class="btn">8</button>
-                <button class="btn">9</button>
-                <button class="btn">6</button>
-                <button class="btn">5</button>
-                <button class="btn">4</button>
-                <button class="btn">3</button>
-                <button class="btn">2</button>
-                <button class="btn">1</button>
-                <button class="btn">0</button>
-
-                <button class="btn">+</button>
-                <button class="btn">-</button>
-                <button class="btn">x</button>
-                <button class="btn">÷</button>
-                <button class="btn">=</button>
-                <button class="btn">clear</button>
+            <div id="display">0</div>
+            <div id="allButtons">
+                <div class="numberButtons">
+                    <button class="btn" value="7">7</button>
+                    <button class="btn" value="8">8</button>
+                    <button class="btn" value="9">9</button>
+                    <button class="btn" value="6">6</button>
+                    <button class="btn" value="5">5</button>
+                    <button class="btn" value="4">4</button>
+                    <button class="btn" value="3">3</button>
+                    <button class="btn" value="2">2</button>
+                    <button class="btn" value="1">1</button>
+                    <button class="btn" value="0">0</button>
+                    <button class="btn decimal-btn" value=".">.</button>
+                    <button class="btn" value="clear">AC</button>
+                </div>
+                <div class="operatorButtons">
+                    <button class="btn" value="+">+</button>
+                    <button class="btn" value="-">-</button>
+                    <button class="btn" value="*">x</button>
+                    <button class="btn" value="/">÷</button>
+                </div>
+            </div>
+            <div class="equalButton">
+                <button class="btn" value="=">=</button>
             </div>
         </div>
-
+        
+        <button id="mode-toggle">
+            <i class="fas fa-sun"></i>
+        </button>
     </div>
 
 

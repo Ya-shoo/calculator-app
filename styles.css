@@ -1,26 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 body {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: 'JetBrains Mono', monospace;
 }
 
-.calculatorContainer {
+#container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.display {
-    background-color: beige;
-    max-width: 450px;
+#calculatorContainer {
+    display: flex;
+    flex-direction: column;
+    width: 320px; /* A fixed width for better control */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    
+}
+
+#display {
+    background-color: #e8e8e8;
+    color: #333;
+    font-size: 2.5em;
+    padding: 20px;
+    text-align: right;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#allButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
 }
 
 .numberButtons {
     display: flex;
-    max-width: 450px;
-    padding: 5px;
-    gap: 5px;
     flex-wrap: wrap;
+    width: calc(100% - 60px); 
+    gap: 10px;
+    justify-content: flex-start;
 }
 
-.numberButtons button {
-    flex-basis: calc(100% / 4);
+.operatorButtons {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    gap: 10px;
+    
+}
+
+.equalButton {
+    margin-top: 10px;
+}
+
+.equalButton .btn {
+    width: 100%;
+}
+
+.btn {
+    height: 60px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.numberButtons .btn:hover {
+    background-color: #d0d0d0;
+}
+
+.numberButtons .btn {
+    flex-basis: calc(33.333% - 7px);
+}
+
+.operatorButtons .btn {
+    flex: 1;
+    background-color: #edf05a;
+}
+
+.operatorButtons .btn:hover {
+    background-color: #dbdd4e;
+}
+
+.equalButton .btn {
+    background-color: #79b910d7;
+}
+
+.equalButton .btn:hover {
+    background-color: #659b0ed7;
+}
+
+/* ------------------------------------------- */
+
+/* Dark Mode */
+#mode-toggle {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em; /* Make the icon larger */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    display: flex; /* Use flexbox to center the icon */
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Give it a fixed size */
+    height: 60px;
+}
+
+body.dark-mode #mode-toggle {
+    background-color: #666;
+    color: #f0f0f0;
+}
+
+#mode-toggle i {
+    color: #333; /* Default icon color */
+}
+
+body.dark-mode #mode-toggle i {
+    color: #f0f0f0; /* Icon color in dark mode */
+}
+
+
+body.dark-mode {
+    background-color: #262626; /* Dark grey body background */
+    color: #f0f0f0; /* Light text for readability */
+}
+
+body.dark-mode #calculatorContainer {
+    background-color: #3d3d3d; /* Slightly lighter container */
+    border-color: #555;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode #display {
+    background-color: #4f4f4f; /* Darker display background */
+    color: #f0f0f0; /* White text */
+}
+
+body.dark-mode .btn {
+    background-color: #555; /* Dark grey button base */
+    color: #f0f0f0; /* Light text */
+}
+
+body.dark-mode .numberButtons .btn:hover {
+    background-color: #6a6a6a; /* Lighter grey on hover */
+}
+
+body.dark-mode .operatorButtons .btn {
+    background-color: #929910; /* Darker shade of yellow */
+}
+
+body.dark-mode .operatorButtons .btn:hover {
+    background-color: #7d840e; /* Even darker yellow on hover */
+}
+
+body.dark-mode .equalButton .btn {
+    background-color: #5d8e0e; /* Darker shade of green */
+}
+
+body.dark-mode .equalButton .btn:hover {
+    background-color: #4c730c; /* Even darker green on hover */
 }
